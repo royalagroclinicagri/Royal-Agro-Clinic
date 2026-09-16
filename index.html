@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Agro Clinic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Noto+Sans+Tamil:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+@font-face {
+    font-family: "Bamini";
+    src: url("/fonts/bamini.ttf") format("truetype");
+}
+
+body{
+font-family:"noto sans tamil", sans-serif;
+background:#f4fff2;
+color:#222;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:60px;
+    background:#fff;
+    padding:5px 25px;
+    display:flex;
+    justify-content:space-between;
+    white-space: nowrap;
+    align-items:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.12);
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+header .logo img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:contain;
+}
+
+.logo h2{
+    font-family:Poppins;
+    font-size:20px;
+    color:#067a2d;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    margin-left:20px;
+    font-family:Poppins;
+    font-size:14px;
+    font-weight:600;
+    color:#066128;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#e2a600;
+}
+
+.hero{
+    position:relative;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    animation:bgSlider 24s infinite;
+    z-index:-2;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,60,20,0.55);
+    z-index:-1;
+}
+
+.hero-content{
+    max-width:850px;
+    padding:20px;
+}
+
+.logo{
+    width:140px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    background:#FFD54F;
+    color:#000;
+    padding:14px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+@keyframes bgSlider{
+
+    0%,16%{
+        background-image:url("images/header1.jpg");
+    }
+
+    17%,33%{
+        background-image:url("images/header2.jpg");
+    }
+
+    34%,50%{
+        background-image:url("images/header3.jpg");
+    }
+
+    51%,66%{
+        background-image:url("images/header4.jpg");
+    }
+
+    67%,83%{
+        background-image:url("images/header5.jpg");
+    }
+
+    84%,100%{
+        background-image:url("images/header6.jpg");
+    }
+
+}
+
+.btn:hover{
+background:white;
+transform:translateY(-5px);
+}
+
+section{
+padding:90px 8%;
+}
+
+.title{
+text-align:center;
+font-size:38px;
+color:#067a2d;
+margin-bottom:40px;
+font-family:Poppins;
+}
+
+.about{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:25px;
+box-shadow:0 15px 25px rgba(0,0,0,.15);
+}
+
+.about p{
+line-height:2;
+font-size:18px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+.card{
+background:#fff;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-12px);
+background:#067a2d;
+color:white;
+}
+
+.card h3{
+margin-bottom:10px;
+font-family:"Bamini", sans-serif;
+}
+ .card p{
+    font-family: "Bamini", sans-serif;
+    line-height: 1.8;
+}
+
+.product-slider{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    padding:20px 50px 30px;
+}
+
+.products{
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-rows:repeat(2, 1fr);
+    grid-auto-columns:260px;
+    gap:25px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    padding:10px 5px 20px;
+}
+
+.products::-webkit-scrollbar{
+    display:none;
+}
+
+.product{
+    background:#fff;
+    padding:18px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 22px rgba(0,0,0,.10);
+    transition:.4s;
+    min-height:340px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,120,0,.20);
+}
+
+.product img{
+    width:160px;
+    height:160px;
+    object-fit:contain;
+    margin:auto;
+    transition: 0.1em;
+}
+
+.product:hover img{
+    transform:scale(1.06);
+}
+
+.product h4{
+    margin:10px 0;
+    font-family:Poppins;
+    color:#067a2d;
+    font-size:18px;
+}
+
+.product p{
+    font-size:14px;
+    line-height:1.6;
+    color:#555;
+    min-height:50px;
+}
+
+.view-btn{
+    display:inline-block;
+    padding:10px 25px;
+    background:#067a2d;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.view-btn:hover{
+    background:#e2a600;
+}
+.buy-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:11px 20px;
+    background:#067a2d;
+    color:#fff;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+    font-family:Poppins;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    background:#e2a600;
+    color:#fff;
+    transform:scale(1.05);
+}
+
+.product:hover{
+transform:scale(1.05);
+box-shadow:0 15px 35px rgba(0,120,0,.2);
+}
+
+.product img{
+width:170px;
+height:180px;
+object-fit:contain;
+transition:.5s;
+}
+
+.product:hover img{
+transform:translateY(-10px);
+}
+
+.slide-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#067a2d;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+    z-index:10;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition: 0.2m;
+}
+
+.slide-btn:hover{
+    background:#e2a600;
+    transform:translateY(-50%) scale(1.1);
+}
+
+.prev{
+    left:5px;
+}
+
+.next{
+    right:5px;
+}
+
+.product h4{
+margin:15px 0;
+font-family:Poppins;
+color:#067a2d;
+}
+
+.counter-box{
+background:linear-gradient(90deg,#067a2d,#18b14c);
+padding:60px 30px;
+color:white;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+text-align:center;
+}
+
+.counter h2{
+font-size:48px;
+}
+
+.contact{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+}
+
+.contact-info{
+line-height:2;
+font-size:18px;
+}
+
+form input,
+form textarea{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #ccc;
+font-family:inherit;
+}
+
+form button{
+width:100%;
+padding:15px;
+background:#067a2d;
+border:none;
+color:white;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+}
+
+footer{
+background:#04411a;
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+background:#25d366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+text-decoration:none;
+color:white;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+animation:pulse 2s infinite;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(37,211,102,.6);}
+70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        padding:15px;
+    }
+
+    nav{
+        margin-top:10px;
+    }
+
+    nav a{
+        margin:10px;
+        display:inline-block;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+}
+
+/* ---------- Product Popup New Design ---------- */
+
+.popup-box{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:9999;
+    overflow-y:auto;
+    padding:20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-card{
+    width: 95%;
+    max-width:900px;
+    max-height: 90vh;
+    margin:auto;
+    background:#fff;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.popup-header{
+    height:220px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.popup-overlay{
+    width:100%;
+    height:100%;
+    background:rgba(0,70,20,.55);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-overlay h2{
+    color:#fff;
+    font-size:34px;
+    font-family:Poppins,sans-serif;
+}
+
+.popup-body{
+    display:flex;
+    gap:25px;
+    padding:25px;
+    align-items:flex-start;
+    max-height: 55vh;
+}
+
+.popup-product-image{
+    width:260px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.popup-text{
+    flex:1;
+}
+
+.popup-text p{
+    font-size:17px;
+    line-height:2;
+    color:#333;
+}
+
+.problem-section{
+    padding:20px 25px;
+}
+
+.problem-section h3{
+    color:#067a2d;
+    font-family:Poppins;
+    margin-bottom:15px;
+}
+
+.problem-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.problem-item img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.problem-item p{
+    text-align:center;
+    margin-top:8px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.popup-footer{
+    padding:25px;
+    text-align:center;
+}
+
+@media(max-width:768px){
+
+.popup-body{
+    flex-direction:column;
+    align-items:center;
+}
+
+.popup-product-image{
+    width:180px;
+}
+
+.problem-grid{
+    grid-template-columns:1fr;
+}
+
+.popup-overlay h2{
+    font-size:26px;
+}
+
+}
+.close-btn{
+    position:fixed;
+    top:20px;
+    right:25px;
+    width:45px;
+    height:45px;
+    background:#fff;
+    color:#067a2d;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    z-index:10000;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+.close-btn:hover{
+    background:#067a2d;
+    color:#fff;
+}
+
+.popup-box h2,
+.popup-box p{
+    font-family:"Bamini", sans-serif;
+}
+
+/* English Headings & Menu */
+.title,
+.logo h2,
+nav a,
+.hero h1,
+.btn,
+.view-btn,
+.buy-btn,
+.product h4,
+.card h3,
+.popup-box h2,
+.details-box h2,
+footer h3{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Tamil content மட்டும் Bamini */
+.hero p,
+.about p,
+.card p,
+.product p,
+.contact-info p,
+.details-box p,
+.popup-box p,
+.counter p,
+form input,
+form textarea{
+    font-family: "Bamini", sans-serif;
+}
+.tamil{
+    font-family: "Bamini", sans-serif !important;
+}
+
+.eng{
+    font-family: "Poppins", sans-serif !important;
+}
+.tamil{
+    font-family: "Bamini", sans-serif !important;
+}
+
+.eng{
+    font-family: "Poppins", "Noto Sans Tamil", sans-serif !important;
+    font-weight: 500;
+}
+/* Product name - English */
+.product h4,
+.popup-box h2{
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600;
+}
+
+/* Product description - Tamil */
+.product p,
+.popup-box p{
+    font-family: 'Noto Sans Tamil', sans-serif !important;
+    line-height: 1.8;
+}
+
+/* ===== Mission Section ===== */
+
+.mission-section{
+    padding:70px 8%;
+    display:flex;
+    justify-content:center;
+}
+
+.mission-box{
+    max-width:900px;
+    background:linear-gradient(135deg,#067a2d,#18b14c);
+    color:#fff;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(6,122,45,.25);
+}
+
+.mission-box h2{
+    font-family:Poppins,sans-serif;
+    font-size:34px;
+    margin-bottom:20px;
+    color:#FFD54F;
+    letter-spacing:2px;
+}
+
+.mission-box p{
+    font-family:'Noto Sans Tamil',sans-serif;
+    font-size:18px;
+    line-height:2;
+}
+
+@media(max-width:768px){
+    .mission-box{
+        padding:25px 20px;
+    }
+
+    .mission-box h2{
+        font-size:28px;
+    }
+
+    .mission-box p{
+        font-size:16px;
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width:768px){
+
+  header{
+    flex-direction:column;
+    height:auto;
+    padding:10px;
+  }
+
+  .logo h2{
+    font-size:18px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-top:10px;
+  }
+
+  nav a{
+    margin:0;
+    font-size:13px;
+  }
+
+  .hero{
+    padding:90px 20px 40px;
+    height:auto;
+    min-height:100vh;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  section{
+    padding:60px 20px;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .product-slider{
+    padding:10px 0 20px;
+  }
+
+  .products{
+    grid-auto-columns:220px;
+    gap:15px;
+  }
+
+  .product{
+    min-height:320px;
+  }
+
+  .product img{
+    width:140px;
+    height:140px;
+  }
+
+  .popup-box{
+    width:95%;
+    padding:15px;
+    max-height:90vh;
+    overflow-y:auto;
+  }
+
+  .popup-banner{
+    height:170px;
+  }
+
+  .popup-banner-overlay h1{
+    font-size:22px;
+    text-align:center;
+    padding:10px 20px;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact{
+    grid-template-columns:1fr;
+  }
+
+  .counter-box{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .counter h2{
+    font-size:34px;
+  }
+
+  .slide-btn{
+    width:38px;
+    height:38px;
+    font-size:18px;
+  }
+
+  .whatsapp{
+    width:55px;
+    height:55px;
+    font-size:28px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="images/logo.png">
+<h2>Royal Agro Clinic</h2>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        
+        <h1>இயற்கை விவசாயத்திற்கு ராயல் இயற்கை உரம் தீர்வு!</h1>
+
+        <p>
+            மண் வளத்தை பாதுகாத்து விளைச்சலை அதிகரித்து
+            விவசாயிகளுக்கு தரமான இயற்கை உரங்களையும் ஆலோசனைகளையும் வழங்கும் நிறுவனம்.
+        </p>
+
+        <a href="#products" class="btn">View Products</a>
+    </div>
+</section>
+
+<section id="about" class="reveal">
+
+<h2 class="title">About</h2>
+
+<div class="about">
+
+<img src="images/All products.png">
+
+<div>
+
+<p>
+
+ராயல் அக்ரோ கிளினிக் இயற்கை விவசாயத்திற்கு முழுமையான தீர்வுகளை வழங்கும் நிறுவனம்.
+இயற்கையின் அழகு என்னவென்றால் தாவரங்களை வளப்படுத்த தாவரங்களையே பயன்படுத்தலாம். 
+அந்த வகையில் நமது ராயல் இயற்கை உரமானது இயற்கை அன்னையாம் கடலிலிருந்து கிடைக்க கூடிய கடல்பாசி இயற்கை உரமாகும்.
+நமது ராயல் நிறுவனத்தின் உரங்கள் அனைத்தும் அதன் தன்மையிலிருந்து மாற்றாமல் பயிர்களுக்குத் தேவையான நுண்ணூட்டம் மற்றும் பேரூட்ட சத்துக்களை வழங்குவதால் பயிர்கள் செழித்தும்  ஆரேக்கியத்துடனும் வளர்கின்றன.
+எங்கள் நிறுவனத்தில் அனுபவம் வாய்ந்த விவசாய ஆலோசகர்களைக் கொண்டு பயிர்களுக்கேற்ப மேற்பார்வையிட்டு பயிர்களில் உள்ள சத்துக்களையும் நோய்களையும் கண்டறிந்து தீர்வுகளை வழங்குவதோடு நமது உரங்களை விவசாய நிலத்திற்கே கொண்டு வந்து அனுபவமுள்ள ஆட்களைக் கொண்டு பயன்படுத்தி தருகிறோம்
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="mission-section reveal">
+    <div class="mission-box">
+        <h2>MISSION</h2>
+        <p>
+            உயர்தரமான இயற்கை உரங்களை தயாரித்து விவசாயிகளுக்கு வழங்குவது, அறிவியல் அடிப்படையிலான வேளாண் அறிவை வழங்குவது, மண்ணின் வளத்தையும் பயிர்களின் உற்பத்தித் திறனையும் மேம்படுத்துவது மற்றும் நிலையான இயற்கை விவசாய நடைமுறைகள் மூலம் விவசாயிகளின் வருமானத்தை உயர்த்துவது என்பதே எங்கள் நோக்கமாகும்.
+        </p>
+    </div>
+</section>
+
+<section id="services" class="reveal">
+
+<h2 class="title">Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="images/field-visit.jpg">
+<h3>🌱 Field Visit</h3>
+<p>விவசாய நிலத்திற்கு நேரடியாக வந்து களப்பார்வை செய்து ஆலோசனை வழங்குகிறோம்.</p>
+
+<a href="services/field-visit.html"class="view-btn">View</a>
+</div>
+
+<div class="card">
+    <img src="images/soil-analysis.jpg">
+<h3>🌾 Soil Analysis</h3>
+<p>மண்ணின் தன்மைக்கு ஏற்ப பொருத்தமான இயற்கை உரங்களை பரிந்துரைக்கிறோம்.</p>
+
+<a href="services/soil-analysis.html"class="view-btn">View</a>
+</div>
+
+<div class="card">
+    <img src="images/crop-guidance.jpg">
+<h3>🍌 Crop Guidance</h3>
+<p>வாழை, தென்னை, காய்கறி மற்றும் அனைத்து பயிர்களுக்கும் முழுமையான வழிகாட்டுதல்.</p>
+
+<a href="services/crop-guidance.html"class="view-btn">View</a>
+</div>
+
+<div class="card">
+    <img src="images/pest-management.jpg">
+<h3>🐛 Pest Management</h3>
+<p>பூச்சி மற்றும் நோய்களுக்கு இயற்கை தீர்வுகள்.</p>
+
+<a href="services/pest-management.html"class="view-btn">View</a>
+</div>
+
+<div class="card">
+    <img src="images/organic-fertilizer.jpg">
+<h3>🌿 Organic Fertilizer Recommendation</h3>
+<p>பயிருக்கு ஏற்ற இயற்கை உர பரிந்துரை.</p> 
+
+<a href="services/organic-fertilizer.html"class="view-btn">View</a>
+</div>
+
+<div class="card">
+    <img src="images/farmer-support.jpg">
+<h3>📞 Farmer Support</h3>
+<p>விவசாயிகளுக்கு தொடர்ச்சியான ஆலோசனை மற்றும் தொழில்நுட்ப உதவி.</p>
+
+<a href="services/farmer-support.html"class="view-btn">View</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="products" class="reveal">
+
+<h2 class="title">Products</h2>
+
+<div class="product-slider">
+
+<button class="slide-btn prev" onclick="slideProducts(-1)">❮</button>
+
+<div class="products" id="productContainer">
+
+    <div class="product">
+        <img src="images/royal-gel.png" alt="Royal Gel">
+        <h4>Royal Gel</h4>
+        <p>மண்ணின் நீர்ப்பிடிப்பு மற்றும் வேர் வளர்ச்சிக்கு உதவும் இயற்கை தயாரிப்பு.</p>
+
+        <button class="view-btn" onclick="showProduct(
+          'Royal Gel',
+           'images/royal-gel.png',
+          'தென்னை மரங்களுக்காக தயாரிக்கப்பட்ட இயற்கை ஊட்டச்சத்து தயாரிப்பு. பூ உதிர்வை குறைக்க உதவுகிறது. காய் பிடிப்பை அதிகரிக்க உதவுகிறது. காய்களின் தரத்தை மேம்படுத்துகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/coconut-energy.png" alt="Coconut Energy">
+        <h4>Coconut Energy</h4>
+        <p>தென்னைக்கு பூ உதிர்வு குறைத்து காய் பிடிப்பை அதிகரிக்க உதவுகிறது.</p>
+
+        <button class="view-btn" onclick="showProduct(
+          'Coconut Energy',
+           'images/coconut-energy.png',
+          'Royal Gel என்பது இயற்கை மூலப்பொருட்களால் தயாரிக்கப்பட்ட சிறப்பு வளர்ச்சி ஊக்கியாகும்.மண்ணின் நீர்ப்பிடிப்பு திறனை அதிகரிக்க உதவுகிறது.மண்ணில் காற்றோட்டத்தை மேம்படுத்தி வேர் வளர்ச்சிக்கு உதவுகிறது.மண்ணின் பொலபொலப்பு தன்மையை அதிகரிக்கிறது.வேர் வளர்ச்சியை ஊக்குவித்து பயிரின் வலிமையை அதிகரிக்கிறது.இளம் தண்டுகளின் வளர்ச்சிக்கு உதவுகிறது.மண்ணில் உள்ள நுண்ணுயிர்களின் செயல்பாட்டை மேம்படுத்துகிறது.மண்புழுக்களின் வளர்ச்சியை அதிகரிக்க உதவுகிறது.பயிர்கள் சத்துக்களை எளிதாக எடுத்துக்கொள்ள உதவுகிறது.அதிக மகசூல் மற்றும் தரமான விளைச்சலை பெற உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/speed-nutrient.png" alt="Speed Nutrient">
+        <h4>Speed Nutrient</h4>
+        <p>அனைத்து பயிர்களுக்கும் தேவையான நுண்ணூட்டச்சத்து.</p>
+
+        <button class="view-btn" onclick="showProduct(
+          'Speed-Nutrient',
+           'images/speed-nutrient.png',
+          'Speed Nutrient என்பது பயிர்களின் வேகமான வளர்ச்சிக்கான சிறப்பு ஊட்டச்சத்து கலவையாகும்.பயிர்களுக்கு தேவையான நுண்ணூட்ட சத்துக்களை வழங்குகிறது.இலைகள் பசுமையாக வளர உதவுகிறது.புதிய தளிர்கள் மற்றும் கிளைகளின் வளர்ச்சியை ஊக்குவிக்கிறது.பூக்கள் மற்றும் காய்களின் வளர்ச்சியை மேம்படுத்துகிறது.சத்து குறைபாடுகளை சரிசெய்ய உதவுகிறது.பயிர்களின் நோய் எதிர்ப்பு திறனை அதிகரிக்கிறது.சீரான வளர்ச்சிக்கு உதவுகிறது.அனைத்து வகை பயிர்களிலும் பயன்படுத்தலாம்.தரமான விளைச்சல் மற்றும் அதிக மகசூலுக்கு உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/red-diamond.png" alt="Red Diamond">
+        <h4>Red Diamond</h4>
+        <p>Bio Potash மூலம் பயிர்களின் வளர்ச்சி மற்றும் மகசூலை மேம்படுத்த உதவுகிறது.</p>
+
+        <button class="view-btn" onclick="showProduct(
+          'Red Diamond',
+           'images/red-diamond.png',
+          'Red Diamond என்பது பயிர்களின் முழுமையான வளர்ச்சிக்காக தயாரிக்கப்பட்ட சிறப்பு ஊட்டச்சத்து தயாரிப்பாகும்.பயிர்களுக்கு தேவையான முக்கிய மற்றும் நுண்ணூட்ட சத்துக்களை வழங்குகிறது.வேர், இலை, தண்டு வளர்ச்சியை மேம்படுத்துகிறது.பூக்கள் மற்றும் காய்களின் தரத்தை அதிகரிக்க உதவுகிறது.பூ உதிர்வு மற்றும் காய் உதிர்வை குறைக்க உதவுகிறது.பயிர்களின் இயற்கையான வளர்ச்சியை ஊக்குவிக்கிறது.மண்ணின் வளத்தை பாதுகாக்க உதவுகிறது.பயிர்களின் சத்து உறிஞ்சும் திறனை அதிகரிக்கிறது.அனைத்து வகையான பயிர்களுக்கும் ஏற்றது.அதிக மகசூல் மற்றும் நல்ல தரமான விளைச்சலுக்கு உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/root-rocket.png" alt="Roots Rocket">
+        <h4>Roots Rocket</h4>
+        <p>வேர் வளர்ச்சியை அதிகரிக்க உதவும் VAM தயாரிப்பு.</p>
+
+        <button class="view-btn" onclick="showProduct(
+          'Roots Rocket',
+           'images/root-rocket.png',
+          'Roots Rocket என்பது VAM நுண்ணுயிரிகளை கொண்ட வேர் வளர்ச்சி ஊக்கி தயாரிப்பாகும்.வேர் அமைப்பு நன்றாக வளர உதவுகிறது.மண்ணில் உள்ள சத்துக்களை பயிர்கள் எளிதாக எடுத்துக்கொள்ள உதவுகிறது.பாஸ்பரஸ் சத்து கிடைக்கும் தன்மையை அதிகரிக்கிறது.செடிகளின் ஆரம்ப வளர்ச்சியை வேகப்படுத்துகிறது.வறட்சி மற்றும் சுற்றுச்சூழல் அழுத்தங்களை தாங்க உதவுகிறது.மண்ணில் நன்மை செய்யும் நுண்ணுயிர்களின் செயல்பாட்டை அதிகரிக்கிறது.வலிமையான வேர் அமைப்பு உருவாக உதவுகிறது.அனைத்து வகையான பயிர்களுக்கும் ஏற்றது.அதிக வளர்ச்சி மற்றும் நல்ல மகசூலுக்கு அடித்தளமாக செயல்படுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/royal-bloom.png" alt="Royal Bloom">
+        <h4>Royal Bloom NPK</h4>
+        <p>இயற்கை NPK ஊட்டச்சத்து கலவை.</p>
+
+       <button class="view-btn" onclick="showProduct(
+          'Royal Bloom',
+           'images/royal-bloom.png',
+          'Royal Bloom NPK என்பது பயிர்களின் முழுமையான வளர்ச்சிக்காக தயாரிக்கப்பட்ட சிறப்பு இயற்கை NPK உரமாகும்.பயிர்களுக்கு தேவையான நைட்ரஜன், பாஸ்பரஸ் மற்றும் பொட்டாசியம் சத்துக்களை வழங்குகிறது.இலைகள் பசுமையாகவும் ஆரோக்கியமாகவும் வளர உதவுகிறது.வேர் வளர்ச்சியை மேம்படுத்தி செடியின் வலிமையை அதிகரிக்கிறது.பூக்கள் உருவாகும் திறனை அதிகரிக்க உதவுகிறது.காய் மற்றும் பழங்களின் வளர்ச்சியை மேம்படுத்துகிறது.பயிர்களின் சீரான வளர்ச்சிக்கு தேவையான சத்துக்களை வழங்குகிறது.மண்ணின் வளத்தை பாதுகாக்க உதவுகிறது.பயிர்களின் நோய் எதிர்ப்பு திறனை மேம்படுத்துகிறது.தரமான விளைச்சல் மற்றும் அதிக மகசூலை பெற உதவுகிறது.',
+       )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/uyir-pseudomonas.png" alt="Uyir Pseudomonas">
+        <h4>Uyir Pseudomonas</h4>
+        <p>வேர்நோய் மற்றும் பூஞ்சை தாக்குதலை கட்டுப்படுத்த உதவும்.</p>
+
+       <button class="view-btn" onclick="showProduct(
+          'Uyir Pseudomonas',
+           'images/uyir-pseudomonas.png',
+          'உயிர் Pseudomonas என்பது பயிர்களை பாதுகாக்க உதவும் ஒரு சிறந்த உயிரியல் பூஞ்சாண மற்றும் நோய் மேலாண்மை தயாரிப்பாகும்.பயிர்களில் ஏற்படும் வேர் அழுகல், வாடல் நோய் மற்றும் பல்வேறு பூஞ்சை நோய்களை கட்டுப்படுத்த உதவுகிறது.மண்ணில் உள்ள நன்மை செய்யும் நுண்ணுயிர்களின் செயல்பாட்டை அதிகரிக்கிறது.வேர் வளர்ச்சியை மேம்படுத்தி செடிகளின் ஆரோக்கியத்தை அதிகரிக்கிறது.பயிர்களின் இயற்கையான நோய் எதிர்ப்பு திறனை மேம்படுத்த உதவுகிறது.தீங்கு விளைவிக்கும் நோய் கிருமிகளின் வளர்ச்சியை கட்டுப்படுத்துகிறது.மண்ணின் உயிர்ச்சக்தியை அதிகரிக்க உதவுகிறது.விதை நேர்த்தி, வேர் நனைப்பு மற்றும் மண் பயன்பாட்டிற்கு ஏற்றது.அனைத்து வகையான காய்கறி, பழம், தோட்டக்கலை மற்றும் வயல் பயிர்களுக்கும் பயன்படுத்தலாம்.ஆரோக்கியமான பயிர் வளர்ச்சி மற்றும் தரமான அதிக மகசூலுக்கு உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/dr-sticky-pro.png" alt="Dr Sticky Pro">
+        <h4>Dr. Sticky Pro</h4>
+        <p>Wetting Agent.</p>
+
+        <button class="view-btn" onclick="showProduct(
+          'Dr Sticky Pro',
+           'images/dr-sticky-pro.png',
+          'Dr. Sticky Pro என்பது பயிர் பாதுகாப்பு மருந்துகள் மற்றும் ஊட்டச்சத்து தெளிப்புகளின் செயல்திறனை அதிகரிக்க உதவும் சிறந்த ஸ்டிக்கர் மற்றும் ஸ்பிரெடர் தயாரிப்பாகும்.இலைகளின் மேற்பரப்பில் தெளிப்பு மருந்துகள் நன்றாக ஒட்டிக்கொள்ள உதவுகிறது.மருந்து கரைசல் இலைகளில் நீண்ட நேரம் தங்கி செயல்பட உதவுகிறது.மழை அல்லது நீர் தெளிப்பினால் மருந்து எளிதில் கழுவிச் செல்லாமல் பாதுகாக்கிறது.பயிர்களுக்கு வழங்கப்படும் ஊட்டச்சத்துக்கள் மற்றும் பூச்சி மேலாண்மை தயாரிப்புகளின் பயன்பாட்டு திறனை அதிகரிக்கிறது.தெளிப்பு மருந்துகள் இலை முழுவதும் சீராக பரவ உதவுகிறது.குறைந்த அளவு மருந்திலும் சிறந்த செயல்பாட்டை பெற உதவுகிறது.பயிர்களின் இலைகள் மற்றும் தண்டுகளில் நல்ல பிடிப்புத் தன்மையை உருவாக்குகிறது.அனைத்து வகையான பயிர்கள் மற்றும் தெளிப்பு பயன்பாடுகளுக்கும் ஏற்றது.விவசாயிகளுக்கு சிறந்த பயிர் பாதுகாப்பு மற்றும் தரமான விளைச்சலை பெற உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/boro-active.png" alt="Boro Active">
+        <h4>Boro Active</h4>
+        <p>போரான் குறைபாட்டை சரிசெய்ய உதவுகிறது.</p>
+
+        <button class="view-btn" onclick="showProduct(
+          'Boro Active',
+           'images/boro-active.png',
+          'Boro active என்பது பயிர்களுக்கு தேவையான போரான் நுண்ணூட்ட சத்தை வழங்கும் சிறப்பு தயாரிப்பாகும்.பூக்கள் உருவாகும் திறனை மேம்படுத்த உதவுகிறது.காய் பிடிக்கும் திறனை அதிகரிக்கிறது.பூ மற்றும் காய் உதிர்வை குறைக்க உதவுகிறது.மகரந்த சேர்க்கை செயல்பாட்டை மேம்படுத்துகிறது.பயிர்களின் செல்கள் வளர்ச்சிக்கு உதவுகிறது.காய் மற்றும் பழங்களின் தரத்தை அதிகரிக்கிறது.நுண்ணூட்ட சத்து குறைபாடுகளை சரிசெய்ய உதவுகிறது பயிர்களின் சீரான வளர்ச்சியை ஊக்குவிக்கிறது.தரமான விளைச்சல் மற்றும் அதிக மகசூலுக்கு உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/grow-maxX.png" alt="Grow-maxX">
+        <h4>Grow-maxX</h4>
+        <p>முழுமையான இயற்கை ஊட்டச்சத்து கலவை.</p>
+
+       <button class="view-btn" onclick="showProduct(
+          'G-Mix X',
+           'images/grow-maxx.png',
+          'Growmaxx என்பது பயிர்களின் வளர்ச்சி மற்றும் மகசூலை அதிகரிக்க உதவும் சிறப்பு வளர்ச்சி ஊக்கியாகும்.பயிர்களுக்கு தேவையான ஊட்டச்சத்துக்களை வழங்குகிறது.வேர், இலை மற்றும் தண்டு வளர்ச்சியை மேம்படுத்துகிறது.பயிர்களின் வளர்ச்சி திறனை அதிகரிக்க உதவுகிறது.பூக்கள் மற்றும் காய்களின் உருவாக்கத்தை ஊக்குவிக்கிறது.பயிர்களின் சத்து உறிஞ்சும் திறனை மேம்படுத்துகிறது.மண்ணின் வளத்தை பாதுகாக்க உதவுகிறது.பயிர்களின் ஆரோக்கியமான வளர்ச்சிக்கு துணையாக உள்ளது.அனைத்து வகை பயிர்களிலும் பயன்படுத்தலாம்.தரமான விளைச்சல் மற்றும் அதிக மகசூலை பெற உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/banana-gold.png" alt="Banana Gold">
+        <h4>Banana Gold</h4>
+        <p>வாழை பயிரின் வேர், தண்டு மற்றும் குலை வளர்ச்சிக்கு உதவும்.</p>
+
+       <button class="view-btn" onclick="showProduct(
+          'Banana Gold',
+           'images/banana-gold.png',
+          'Banana Gold என்பது வாழை பயிருக்காக சிறப்பாக தயாரிக்கப்பட்ட இயற்கை ஊட்டச்சத்து உரமாகும்.வாழை செடியின் முழுமையான வளர்ச்சிக்கு தேவையான சத்துக்களை வழங்குகிறது.வேர் வளர்ச்சியை அதிகரித்து செடியின் வலிமையை மேம்படுத்துகிறது.தண்டு வளர்ச்சியை ஊக்குவிக்கிறது.குலையின் அளவு மற்றும் எடையை அதிகரிக்க உதவுகிறது.காய்களின் தரம் மற்றும் எண்ணிக்கையை மேம்படுத்துகிறது.பூ மற்றும் காய் உதிர்வை குறைக்க உதவுகிறது.வாழையின் சீரான வளர்ச்சிக்கு உதவுகிறது.மண்ணின் வளத்தை மேம்படுத்துகிறது.அதிக விளைச்சல் மற்றும் விவசாய வருமானத்திற்கு உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/beauveria.png" alt="Beauveria">
+        <h4>Beauveria</h4>
+        <p>இயற்கை முறையில் பூச்சி மேலாண்மைக்கு உதவும் உயிரியல் தயாரிப்பு.</p>
+
+<button class="view-btn" onclick="showProduct(
+          'Beauveria',
+           'images/beauveria.png',
+          'Beauveria என்பது இயற்கையான பூஞ்சை அடிப்படையிலான உயிரியல் பூச்சி மேலாண்மை தயாரிப்பாகும்.பயிர்களை தாக்கும் தீங்கு விளைவிக்கும் பூச்சிகளை கட்டுப்படுத்த உதவுகிறது.பூச்சிகளின் உடலில் செயல்பட்டு அவற்றின் பெருக்கத்தை குறைக்கிறதுபயிர்களுக்கு பாதுகாப்பான முறையில் பூச்சி மேலாண்மைக்கு உதவுகிறது.ரசாயன பூச்சிக்கொல்லிகளின் பயன்பாட்டை குறைக்க உதவுகிறது.மண்ணில் உள்ள நன்மை செய்யும் நுண்ணுயிர்களின் செயல்பாட்டை பாதுகாக்கிறது.பயிர்களின் இயற்கையான நோய் எதிர்ப்பு திறனை அதிகரிக்க உதவுகிறது.இலை மற்றும் தண்டு பகுதிகளில் ஏற்படும் பூச்சி தாக்குதலை கட்டுப்படுத்த உதவுகிறது.பருத்தி, காய்கறிகள், பழப்பயிர்கள் மற்றும் பல்வேறு பயிர்களுக்கு ஏற்றது.ஆரோக்கியமான பயிர் வளர்ச்சி மற்றும் தரமான மகசூலை பெற உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/cotton-whitefly-fighter.png" alt="Cotton Whitefly Fighter">
+        <h4>Cotton Whitefly Fighter</h4>
+        <p>வெள்ளை ஈ தாக்குதலை கட்டுப்படுத்த உதவும்.</p>
+
+      <button class="view-btn" onclick="showProduct(
+          'Cotton Whitefly Fighter',
+           'images/cotton-whitefly-fighter.png',
+          'Cotton White Fly Fighter என்பது வெள்ளை ஈ மற்றும் உறிஞ்சும் பூச்சிகளை கட்டுப்படுத்த உதவும் சிறப்பு தயாரிப்பாகும்.பயிர்களை தாக்கும் பூச்சிகளின் எண்ணிக்கையை குறைக்க உதவுகிறது.இலைகளின் ஆரோக்கியத்தை பாதுகாக்கிறது.பயிர்களின் பசுமை தன்மையை மேம்படுத்துகிறது.பூச்சி தாக்குதலால் ஏற்படும் வளர்ச்சி பாதிப்புகளை குறைக்க உதவுகிறது.பயிர்களின் இயற்கையான பாதுகாப்பு திறனை அதிகரிக்கிறது.சுற்றுச்சூழலுக்கு பாதுகாப்பான முறையில் செயல்படுகிறது பல்வேறு பயிர்களில் பயன்படுத்த ஏற்றது.ஆரோக்கியமான வளர்ச்சிக்கு உதவுகிறது.தரமான விளைச்சலை பெற விவசாயிகளுக்கு உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/dr-root.png" alt="Dr Root">
+        <h4>Dr.Root</h4>
+        <p>வேர் வளர்ச்சி மற்றும் ஊட்டச்சத்து உறிஞ்சுதலை மேம்படுத்த உதவுகிறது.</p>
+
+       <button class="view-btn" onclick="showProduct(
+          'Dr Root',
+           'images/dr-root.png',
+          'Dr.Root என்பது பயிர்களின் வேர் வளர்ச்சியை மேம்படுத்தும் சிறப்பு உயிர் ஊக்கியாகும்.வலிமையான வேர் அமைப்பு உருவாக உதவுகிறது.மண்ணில் இருந்து சத்துக்களை உறிஞ்சும் திறனை அதிகரிக்கிறது.செடிகளின் ஆரம்ப வளர்ச்சியை வேகப்படுத்துகிறது.வேர் பரப்பளவை அதிகரித்து பயிரின் வளர்ச்சியை மேம்படுத்துகிறது.வறட்சியை தாங்கும் திறனை அதிகரிக்க உதவுகிறது.மண்ணின் நுண்ணுயிர் செயல்பாட்டை மேம்படுத்துகிறது.பயிர்களின் ஒட்டுமொத்த ஆரோக்கியத்தை பாதுகாக்கிறது.அனைத்து வகை பயிர்களுக்கும் ஏற்றது.அதிக மகசூல் பெறுவதற்கான நல்ல அடித்தளத்தை உருவாக்குகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/hero-plus.png" alt="Hero Plus">
+        <h4>Hero Plus</h4>
+        <p>பயிர்களின் ஆரோக்கியமான வளர்ச்சிக்கு உதவும் ஊட்டச்சத்து.</p>
+
+       <button class="view-btn" onclick="showProduct(
+          'Hero Plus',
+           'images/hero-plus.png',
+          'Hero Plus என்பது பயிர்களின் வளர்ச்சி மற்றும் உற்பத்தியை மேம்படுத்தும் சிறப்பு ஊட்டச்சத்து தயாரிப்பாகும்.பயிர்களுக்கு தேவையான சத்துக்களை சரியான முறையில் வழங்குகிறது.இலை, தண்டு மற்றும் வேர் வளர்ச்சியை மேம்படுத்துகிறது.பயிர்களின் வளர்ச்சி வேகத்தை அதிகரிக்க உதவுகிறது.பூக்கள் மற்றும் காய்களின் தரத்தை உயர்த்துகிறது.சத்து குறைபாடுகளை சரிசெய்ய உதவுகிறது.பயிர்களின் இயற்கையான நோய் எதிர்ப்பு திறனை அதிகரிக்கிறது.பயிர்களின் சீரான வளர்ச்சிக்கு உதவுகிறது.அனைத்து வகையான பயிர்களிலும் பயன்படுத்த ஏற்றது.அதிக மகசூல் மற்றும் தரமான விளைச்சலை பெற உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/hulk.png" alt="HULK">
+        <h4>HULK</h4>
+        <p>வலிமையான தண்டு மற்றும் இலை வளர்ச்சிக்கு உதவுகிறது.</p>
+
+       <button class="view-btn" onclick="showProduct(
+          'HULK',
+           'images/hulk.png',
+          'HULK என்பது பயிர்களின் வலிமை மற்றும் வளர்ச்சியை அதிகரிக்க உருவாக்கப்பட்ட சிறப்பு தயாரிப்பாகும்.செடிகளின் வளர்ச்சியை வேகமாக மேம்படுத்த உதவுகிறது.தண்டு மற்றும் இலைகளுக்கு நல்ல வலிமையை வழங்குகிறது.வேர் வளர்ச்சியை ஊக்குவிக்கிறது.பயிர்கள் சத்துக்களை சிறப்பாக எடுத்துக்கொள்ள உதவுகிறது.சுற்றுச்சூழல் அழுத்தங்களை எதிர்கொள்ளும் திறனை அதிகரிக்கிறது.பயிர்களின் ஆரோக்கியமான வளர்ச்சியை பாதுகாக்கிறது.மண்ணின் வளத்தை மேம்படுத்த உதவுகிறது.அனைத்து வகையான பயிர்களுக்கும் ஏற்றதாக உள்ளது.நல்ல தரமான விளைச்சல் மற்றும் அதிக உற்பத்திக்கு உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/mite-off.png" alt="Mite Off">
+        <h4>Mite Off</h4>
+        <p>மைட் மற்றும் சிலந்திப்பூச்சி தாக்குதலை கட்டுப்படுத்த உதவும்.</p>
+
+       <button class="view-btn" onclick="showProduct(
+          'Mite Off',
+           'images/mite-off.png',
+          'Mite Off என்பது பயிர்களில் ஏற்படும் சிலந்திப்பூச்சி மற்றும் நுண்ணுயிர் தாக்குதல்களை கட்டுப்படுத்த உதவும் சிறப்பு தயாரிப்பாகும்.பயிர்களை தாக்கும் தீங்கு விளைவிக்கும் பூச்சிகளின் பாதிப்பை குறைக்க உதவுகிறது.இலைகளின் ஆரோக்கியத்தை பாதுகாக்கிறது.பயிர்களின் இயற்கையான வளர்ச்சியை மேம்படுத்துகிறது.இலைகள் பாதிக்கப்படாமல் பாதுகாக்க உதவுகிறது.பூச்சி தாக்குதலால் ஏற்படும் வளர்ச்சி குறைபாடுகளை குறைக பயிர்களின் பசுமை தன்மையை அதிகரிக்க உதவுகிறது.சீரான வளர்ச்சிக்கு தேவையான பாதுகாப்பை வழங்குகிறது.பல்வேறு பயிர்களில் பயன்படுத்த ஏற்றது.ஆரோக்கியமான பயிர் மற்றும் தரமான விளைச்சலுக்கு உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+
+    <div class="product">
+        <img src="images/rhino-flash.png" alt="Rhino Flash">
+        <h4>Rhino Flash</h4>
+        <p>பயிர்களுக்கு ஊட்டச்சத்து வழங்கி வளர்ச்சியை மேம்படுத்த உதவுகிறது.</p>
+
+       <button class="view-btn" onclick="showProduct(
+          'Rhino Flash',
+           'images/rhino-flash.png',
+          'Rhino Flash என்பது பயிர்களின் வேகமான வளர்ச்சி மற்றும் அதிக உற்பத்திக்கான சிறப்பு ஊட்டச்சத்து தயாரிப்பாகும்.பயிர்களின் வளர்ச்சி வேகத்தை அதிகரிக்க உதவுகிறது.புதிய தளிர்கள் மற்றும் கிளைகளின் வளர்ச்சியை ஊக்குவிக்கிறது.இலைகளின் பசுமை தன்மையை மேம்படுத்துகிறது.பூக்கள் மற்றும் காய்களின் வளர்ச்சிக்கு உதவுகிறது.பயிர்களின் இயற்கையான சக்தியை அதிகரிக்கிறது.சத்து குறைபாடுகளை சரிசெய்ய உதவுகிறது.பயிர்களின் தரத்தை உயர்த்துகிறது.அனைத்து வகையான பயிர்களுக்கும் பயன்படுத்த ஏற்றது.அதிக மகசூல் மற்றும் விவசாய லாபத்தை அதிகரிக்க உதவுகிறது.'
+           )">
+           View
+        </button>
+    </div>
+
+</div>
+
+<button class="slide-btn next" onclick="slideProducts(1)">❯</button>
+
+</div>
+
+</section>
+
+<section class="counter-box reveal">
+
+<div class="counter">
+<h2 class="count" data-target="1000">0</h2>
+<p>விவசாயிகள் பயன்பெற்றனர்</p>
+</div>
+
+<div class="counter">
+<h2 class="count" data-target="50">0</h2>
+<p>இயற்கை தயாரிப்புகள்</p>
+</div>
+
+<div class="counter">
+<h2 class="count" data-target="1000">0</h2>
+<p>களப்பார்வைகள்</p>
+</div>
+
+<div class="counter">
+<h2 class="count" data-target="20">0</h2>
+<p>மாவட்ட சேவை</p>
+</div>
+
+<div class="counter">
+<h2 class="count" data-target="5">0</h2>
+<p>மாநிலம் சேவை</p>
+</div>
+
+</section>
+
+<section id="contact" class="reveal">
+
+<h2 class="title">Contact</h2>
+
+<div class="contact">
+
+<div class="contact-info">
+
+<p>
+  📍 <span class="eng">2/79 D-2,</span>
+
+    <span class="tamil">சந்திரசேகர் பெருமாள் நகர்</span><span class="eng">,</span><br>
+
+    <span class="tamil">மேலப்பனங்காடி</span><span class="eng">,</span>
+
+    <span class="tamil">வாகைக்குளம் மெயின் ரோடு</span><span class="eng">,</span><br>
+
+  <span class="tamil">மதுரை - 625017.</span>
+</p>
+
+<p>📞 <span class="eng">+91 91113 34402</span></p>
+
+<p><span class="eng">WhatsApp</span> <span class="tamil">மூலம் தொடர்பு கொள்ளலாம்.</span></p>
+
+<p>✉ <span class="eng">royalagriorganics@gmail.com</span></p>
+</div>
+
+<form>
+
+<input type="text" placeholder="பெயர்">
+
+<input type="tel" placeholder="தொலைபேசி எண்">
+
+<input type="text" placeholder="மாவட்டம்">
+
+<textarea rows="5" placeholder="உங்கள் செய்தி"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<img src="images/logo.png" width="90">
+
+<h3>Royal Agro Clinic</h3>
+
+<p>இயற்கை விவசாயத்திற்கு முழுமையான தீர்வு.</p>
+
+<p>© 2026 Royal Agro Clinic.</p>
+
+</footer>
+
+<a href="https://wa.me/919111334402" class="whatsapp">💬</a>
+
+<script>
+
+// Scroll Reveal
+
+const reveal=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+
+reveal.forEach(el=>{
+
+const top=el.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+
+el.classList.add("active");
+
+}
+
+});
+
+});
+
+
+
+// Counter Animation
+
+const counters=document.querySelectorAll(".count");
+
+let started=false;
+
+window.addEventListener("scroll",()=>{
+
+const section=document.querySelector(".counter-box");
+
+if(!started && section.getBoundingClientRect().top<window.innerHeight){
+
+started=true;
+
+counters.forEach(counter=>{
+
+let count=0;
+
+const target=Number(counter.dataset.target);
+
+const speed=target/100;
+
+function update(){
+
+count+=speed;
+
+if(count<target){
+
+counter.innerText=Math.floor(count);
+
+requestAnimationFrame(update);
+
+}else{
+
+counter.innerText=target+"+";
+
+}
+
+}
+
+update();
+
+});
+
+}
+
+});
+// Product Slider
+
+const productContainer = document.getElementById("productContainer");
+
+function slideProducts(direction){
+
+    const scrollAmount = 570;
+
+    productContainer.scrollBy({
+        left: direction * scrollAmount,
+        behavior: "smooth"
+    });
+}
+
+
+// Auto Slide
+
+setInterval(() => {
+
+    if(productContainer.scrollLeft + productContainer.clientWidth 
+       >= productContainer.scrollWidth - 10){
+
+        productContainer.scrollTo({
+            left:0,
+            behavior:"smooth"
+        });
+
+    }else{
+
+        productContainer.scrollBy({
+            left:570,
+            behavior:"smooth"
+        });
+
+    }
+
+},5000);
+
+function showDetails(type){
+
+let box=document.getElementById("detailsBox");
+
+
+let data={
+
+
+coconut:{
+img:"images/coconut-energy.png",
+name:"Coconut Energy",
+text:"தென்னை மரங்களுக்காக தயாரிக்கப்பட்ட இயற்கை ஊட்டச்சத்து தயாரிப்பு. பூ உதிர்வை குறைக்க உதவுகிறது. காய் பிடிப்பை அதிகரிக்க உதவுகிறது. காய்களின் தரத்தை மேம்படுத்துகிறது. புதிய இலை வளர்ச்சிக்கு உதவுகிறது. நல்ல மகசூலுக்கு உதவுகிறது.",
+buy:true
+},
+
+
+royalgel:{
+img:"images/royal-gel.png",
+name:"Royal Gel",
+text:"மண்ணின் நீர்ப்பிடிப்பு தன்மையை அதிகரிக்கிறது. வேர் வளர்ச்சிக்கு உதவுகிறது. மண் வளத்தை மேம்படுத்துகிறது. பயிர் வளர்ச்சியை ஊக்குவிக்கிறது. மகசூலை அதிகரிக்க உதவுகிறது.",
+buy:true
+},
+
+
+field:{
+img:"images/field-visit.jpg",
+name:"Field Visit",
+text:"விவசாய நிலத்திற்கு நேரடியாக வருகை தருகிறோம். பயிர் நிலை ஆய்வு செய்கிறோம். பிரச்சினைகளை கண்டறிகிறோம். சரியான உர பரிந்துரை வழங்குகிறோம். விவசாயிகளுக்கு முழுமையான வழிகாட்டுதல் வழங்குகிறோம்."
+},
+
+
+soil:{
+img:"images/soil-analysis.jpg",
+name:"Soil Analysis",
+text:"மண்ணின் தன்மையை ஆய்வு செய்கிறோம். தேவையான சத்துக்களை கண்டறிகிறோம். சரியான உர பரிந்துரை செய்கிறோம். மண் வளத்தை மேம்படுத்த உதவுகிறோம். நல்ல விளைச்சலுக்கு வழிகாட்டுகிறோம்."
+}
+
+
+};
+
+
+let item=data[type];
+
+
+box.innerHTML=`
+
+<img src="${item.img}">
+
+<h2>${item.name}</h2>
+
+<p>${item.text}</p>
+
+${item.buy ? 
+`
+<button class="buy-btn" onclick="showPayment()">
+🛒 Buy Now
+</button>
+`
+:""}
+
+`;
+
+
+box.style.display="block";
+
+
+box.scrollIntoView({
+behavior:"smooth"
+});
+
+
+}
+
+function showProduct(name,image,text){
+
+const bgImages={
+ "Royal Gel":"images/bg-royalgel.jpg",
+ "Coconut Energy":"images/bg-coconut.jpg",
+ "Speed-Nutrient":"images/bg-speed.jpg",
+ "Red Diamond":"images/bg-reddiamond.jpg",
+ "Roots Rocket":"images/bg-rootrocket.jpg",
+ "Royal Bloom":"images/bg-bloom.jpg",
+ "Uyir Pseudomonas":"images/bg-pseudomonas.jpg",
+ "Dr Sticky Pro":"images/bg-sticky.jpg",
+ "Boro Active":"images/bg-boron.jpg",
+ "G-Mix X":"images/bg-gmix.jpg",
+ "Banana Gold":"images/bg-banana.jpg",
+ "Beauveria":"images/bg-beauveria.jpg",
+ "Cotton Whitefly Fighter":"images/bg-whitefly.jpg",
+ "Dr Root":"images/bg-root.jpg",
+ "Hero Plus":"images/bg-heroplus.jpg",
+ "HULK":"images/bg-hulk.jpg",
+ "Mite Off":"images/bg-mite.jpg",
+ "Rhino Flash":"images/bg-rhino.jpg"
+};
+
+const bg=bgImages[name] || "images/default-bg.jpg";
+
+let box=document.getElementById("popupContent");
+
+box.innerHTML=`
+
+<div class="popup-card">
+
+<div class="popup-header" style="background-image:url('${bg}')">
+<div class="popup-overlay">
+<h2>${name}</h2>
+</div>
+</div>
+
+<div class="popup-body">
+
+<img src="${image}" class="popup-product-image">
+
+<div class="popup-text">
+<p>${text}</p>
+</div>
+
+</div>
+
+<div class="problem-section">
+
+<h3>எந்த பிரச்சனைக்கு பயன்படும்?</h3>
+
+<div class="problem-grid">
+
+<div class="problem-item">
+<img src="images/problem1.jpg">
+<p>சத்து குறைபாடு</p>
+</div>
+
+<div class="problem-item">
+<img src="images/problem2.jpg">
+<p>இலை மஞ்சள்</p>
+</div>
+
+<div class="problem-item">
+<img src="images/problem3.jpg">
+<p>வேர் வளர்ச்சி குறைவு</p>
+</div>
+
+<div class="problem-item">
+<img src="images/problem4.jpg">
+<p>பூ / காய் உதிர்வு</p>
+</div>
+
+</div>
+
+<h3 style="margin-top:25px;">பயன்படுத்திய பின் கிடைக்கும் மாற்றம்</h3>
+
+<div class="problem-grid">
+
+<div class="problem-item">
+<img src="images/result1.jpg">
+<p>ஆரோக்கியமான இலை</p>
+</div>
+
+<div class="problem-item">
+<img src="images/result2.jpg">
+<p>வலிமையான வேர்</p>
+</div>
+
+<div class="problem-item">
+<img src="images/result3.jpg">
+<p>நல்ல பூக்கும் திறன்</p>
+</div>
+
+<div class="problem-item">
+<img src="images/result4.jpg">
+<p>அதிக மகசூல்</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="popup-footer">
+
+<button class="buy-btn" onclick="showPayment()">
+🛒 Buy Now
+</button>
+
+</div>
+
+</div>
+
+`;
+
+document.getElementById("popup").style.display="flex";
+}
+
+function showPayment(){
+
+let box = document.getElementById("popupContent");
+
+box.innerHTML = `
+<h2 style="color:#067a2d;">Choose Payment Method</h2>
+
+<br>
+
+<a href="upi://pay?pa=YOURUPIID@ybl&pn=Royal%20Agro%20Clinic&cu=INR"
+   class="buy-btn">
+   📲 Google Pay
+</a>
+
+<br><br>
+
+<a href="https://www.paypal.com/paypalme/YOURPAYPALUSERNAME"
+   target="_blank"
+   class="buy-btn">
+   📲 PayPal
+</a>
+
+<br><br>
+
+<a href="https://wa.me/919111334402?text=Royal%20Agro%20Clinic%20Product%20Order"
+   target="_blank"
+   class="buy-btn">
+   💬 WhatsApp Order
+</a>
+`;
+
+document.getElementById("popup").style.display = "flex";
+
+}
+
+function closePopup(){
+    document.getElementById("popup").style.display = "none";
+}
+
+</script>
+
+<div id="popup" class="popup-box">
+
+<span class="close-btn" onclick="closePopup()">✖</span>
+
+<div id="popupContent"></div>
+
+</div>
+
+</body>
+</html>
