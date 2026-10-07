@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Royal Gel | Royal Agro Clinic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&family=Noto+Sans+Tamil:wght@300;500;700&display=swap" rel="stylesheet"> 
+ 
+<style> 
+ 
+*{ 
+    margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+} 
+ 
+body{ 
+    font-family:'Noto Sans Tamil',sans-serif; 
+    background:#f4fff2; 
+    color:#222; 
+} 
+ 
+header{ 
+    background:#fff; 
+    height:70px; 
+    padding:8px 5%; 
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between; 
+    box-shadow:0 3px 12px rgba(0,0,0,.12); 
+} 
+ 
+.logo{ 
+    display:flex; 
+    align-items:center; 
+    gap:10px; 
+} 
+ 
+.logo img{ 
+    width:52px; 
+    height:52px; 
+    object-fit:contain; 
+} 
+ 
+.logo h2{ 
+    font-family:Poppins,sans-serif; 
+    color:#067a2d; 
+} 
+ 
+.back-btn{ 
+    text-decoration:none; 
+    background:#067a2d; 
+    color:#fff; 
+    padding:10px 20px; 
+    border-radius:25px; 
+    font-family:Poppins,sans-serif; 
+} 
+ 
+.product-page{ 
+    max-width:1200px; 
+    margin:50px auto; 
+    padding:20px; 
+} 
+ 
+.product-hero{ 
+    background:#fff; 
+    border-radius:25px; 
+    padding:40px; 
+    display:grid; 
+    grid-template-columns:45% 55%; 
+    gap:40px; 
+    align-items:center; 
+    box-shadow:0 10px 30px rgba(0,0,0,.10); 
+} 
+ 
+.product-image{ 
+    width:100%; 
+    max-width:450px; 
+    height:450px; 
+    object-fit:contain; 
+    margin:auto; 
+} 
+ 
+.product-content h1{ 
+    font-family:Poppins,sans-serif; 
+    color:#067a2d; 
+    font-size:42px; 
+    margin-bottom:20px; 
+} 
+ 
+.product-content p{ 
+    font-size:18px; 
+    line-height:2; 
+} 
+ 
+.section-title{ 
+    text-align:center; 
+    color:#067a2d; 
+    font-family:Poppins,sans-serif; 
+    font-size:30px; 
+    margin:50px 0 25px; 
+} 
+ 
+.points{ 
+    display:grid; 
+    grid-template-columns:repeat(2,1fr); 
+    gap:20px; 
+} 
+ 
+.point{ 
+    background:#fff; 
+    padding:22px; 
+    border-radius:18px; 
+    box-shadow:0 6px 20px rgba(0,0,0,.08); 
+} 
+ 
+.point h3{ 
+    color:#067a2d; 
+    font-family:Poppins,sans-serif; 
+    margin-bottom:8px; 
+} 
+ 
+.point p{ 
+    line-height:1.8; 
+} 
+ 
+.buy-btn{ 
+    display:inline-block; 
+    margin-top:25px; 
+    background:#bb7ac4; 
+    color:#fff; 
+    text-decoration:none; 
+    padding:13px 30px; 
+    border-radius:30px; 
+    font-family:Poppins,sans-serif; 
+    font-weight:600; 
+} 
+ 
+.buy-btn:hover{ 
+    background:#874f8f; 
+} 
+ 
+footer{ 
+    margin-top:60px; 
+    background:#04411a; 
+    color:#fff; 
+    text-align:center; 
+    padding:35px 20px; 
+} 
+ 
+@media(max-width:768px){ 
+ 
+    header{ 
+        padding:8px 15px; 
+    } 
+ 
+    .logo h2{ 
+        font-size:17px; 
+    } 
+ 
+    .product-page{ 
+        margin:25px auto; 
+        padding:15px; 
+    } 
+ 
+    .product-hero{ 
+        grid-template-columns:1fr; 
+        padding:25px; 
+    } 
+ 
+    .product-image{ 
+        height:300px; 
+    } 
+ 
+    .product-content h1{ 
+        font-size:30px; 
+    } 
+ 
+    .product-content p{ 
+        font-size:16px; 
+    } 
+ 
+    .points{ 
+        grid-template-columns:1fr; 
+    } 
+ 
+} 
+ 
+ /* Payment Popup */
+
+.payment-modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.payment-box{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    border-radius:22px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    position:relative;
+    animation:paymentPopup .3s ease;
+}
+
+@keyframes paymentPopup{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.payment-box h2{
+    color:#067a2d;
+    font-family:Poppins,sans-serif;
+    margin-bottom:8px;
+}
+
+.payment-box p{
+    color:#666;
+    margin-bottom:22px;
+}
+
+.payment-option{
+    display:block;
+    width:100%;
+    padding:14px 18px;
+    margin:12px 0;
+    border-radius:12px;
+    text-decoration:none;
+    font-family:Poppins,sans-serif;
+    font-weight:600;
+    color:#666;
+    transition:.3s;
+}
+
+.payment-option:hover{
+    transform:translateY(-2px);
+    background-color: #40aa70;;
+    opacity:.9;
+}
+
+.paypal{
+    background:rgb(245, 246, 247);
+}
+
+.whatsapp-pay{
+    background:rgb(245, 246, 247);
+}
+
+.google-pay{
+    background:rgb(245, 246, 247);
+}
+
+.close-payment{
+    position:absolute;
+    top:10px;
+    right:15px;
+    border:none;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+    color:#555;
+}
+</style> 
+ 
+</head> 
+ 
+<body> 
+ 
+<header> 
+ 
+<div class="logo"> 
+ 
+<img src="../images/logo.png"> 
+ 
+<h2>Royal Agro Clinic</h2> 
+ 
+</div> 
+ 
+<a href="../index.html#products" class="back-btn"> 
+← Products 
+</a> 
+ 
+</header> 
+ 
+ 
+<main class="product-page"> 
+ 
+<section class="product-hero"> 
+ 
+<div> 
+ 
+<img src="../images/boro-active.png" 
+     class="product-image" 
+     alt="Boro Active"> 
+ 
+</div> 
+ 
+ 
+<div class="product-content"> 
+ 
+<h1>Boro Active</h1> 
+ 
+<p> 
+Boro Active என்பது பயிர்களின் போரான் ஊட்டச்சத்து தேவையை ஆதரிக்க உதவும் சிறப்பு micronutrient தயாரிப்பு. போரான் பயிர்களின் வளர்ச்சி மற்றும் இனப்பெருக்க செயல்பாடுகளில் முக்கிய பங்கு வகிக்கும் நுண்ணூட்டச்சத்தாகும். புதிய திசுக்கள் மற்றும் வளர்ந்து வரும் பகுதிகளின் ஆரோக்கியமான வளர்ச்சிக்கு உதவுகிறது. பூ உருவாக்கம் மற்றும் காய்/பழ வளர்ச்சி நிலைகளில் பயிருக்கு தேவையான ஆதரவை வழங்குகிறது. ஊட்டச்சத்து குறைபாடுகளால் ஏற்படும் வளர்ச்சி பாதிப்புகளை குறைக்க உதவும் ஒருங்கிணைந்த ஊட்டச்சத்து மேலாண்மையில் பயன்படுத்தலாம். பயிரின் சீரான வளர்ச்சிக்கு துணையாகிறது. பூக்கும் மற்றும் காய்க்கும் பயிர்களில் சரியான போரான் மேலாண்மைக்கு உதவுகிறது. பல்வேறு பயிர்களின் micronutrient management-ல் பயன்படுத்த ஏற்றது. முறையான உர மேலாண்மையுடன் இணைந்து பயன்படுத்தும்போது பயிரின் வளர்ச்சி மற்றும் மகசூல் திறனுக்கு ஆதரவளிக்கிறது.
+</p> 
+ 
+<a href="javascript:void(0)" class="buy-btn" onclick="openPayment()">
+    🛒 Buy Now
+</a>
+ 
+</div> 
+ 
+</section> 
+ 
+<!-- Payment Options Popup -->
+
+<div class="payment-modal" id="paymentModal">
+
+    <div class="payment-box">
+
+        <button class="close-payment" onclick="closePayment()">
+            ×
+        </button>
+
+        <h2>Choose Payment Method</h2>
+
+        <p>உங்கள் Payment Method-ஐ தேர்வு செய்யவும்</p>
+
+        <!-- PayPal -->
+        <a href="YOUR_PAYPAL_LINK"
+           target="_blank"
+           class="payment-option paypal">
+            💳 PayPal
+        </a>
+
+        <!-- WhatsApp Pay -->
+        <a href="https://wa.me/919111334402"
+           target="_blank"
+           class="payment-option whatsapp-pay">
+            💚 WhatsApp Pay
+        </a>
+
+        <!-- Google Pay -->
+        <a href="YOUR_GOOGLE_PAY_LINK"
+           target="_blank"
+           class="payment-option google-pay">
+            🔵 Google Pay
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+function openPayment(){
+    document.getElementById("paymentModal").style.display = "flex";
+}
+
+function closePayment(){
+    document.getElementById("paymentModal").style.display = "none";
+}
+
+/* Popup outside click */
+
+window.onclick = function(event){
+
+    const modal = document.getElementById("paymentModal");
+
+    if(event.target === modal){
+        closePayment();
+    }
+
+}
+
+</script>
+
+</body> 
+ 
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Royal Agro Clinic - Media</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f4fff2;
+    padding:30px;
+}
+
+/* POSTER GRID */
+
+.media-grid{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4, 1fr);
+
+    gap:25px;
+
+}
+
+.media-grid img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+.media-grid img:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+/* TABLET */
+
+@media(max-width:1000px){
+
+    .media-grid{
+
+        grid-template-columns:
+        repeat(3,1fr);
+
+    }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    body{
+        padding:15px;
+    }
+
+    .media-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:12px;
+
+    }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media(max-width:450px){
+
+    .media-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="media-grid">
+
+
+    <img src="images/media/media1.jpg">
+
+    <img src="images/media/media2.jpg">
+
+    <img src="images/media/media3.jpg">
+
+    <img src="images/media/media4.jpg">
+
+    <img src="images/media/media5.jpg">
+
+    <img src="images/media/media6.jpg">
+
+    <img src="images/media/media7.jpg">
+
+    <img src="images/media/media8.jpg">
+
+    <img src="images/media/media9.jpg">
+
+    <img src="images/media/media10.jpg">
+
+    <img src="images/media/media11.jpg">
+
+    <img src="images/media/media12.jpg">
+
+
+</div>
+
+
+</body>
+
+</html>
